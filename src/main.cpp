@@ -4,23 +4,25 @@
 
 
 
-double map(char input) { // wish I could use actual mapping for this, but arduino doesn't have it
-    if (input == '1') return 1;
-    if (input == '2') return 2;
-    if (input == '3') return 3;
-    if (input == '4') return 4;
-    if (input == '5') return 5;
-    if (input == '6') return 6;
-    if (input == '7') return 7;
-    if (input == '8') return 8;
-    if (input == '9') return 9;
-    if (input == '0') return 0;
-    return -1;
+double mapping(char input) { // wish I could use actual mapping for this, but arduino doesn't have it
+
+    switch (input) {
+        case '1': return 1;
+        case '2': return 2;
+        case '3': return 3;
+        case '4': return 4;
+        case '5': return 5;
+        case '6': return 6;
+        case '7': return 7;
+        case '8': return 8;
+        case '9': return 9;
+        case '0': return 0;
+        default: return -1;
+        
+    }
 }
 
 double pow(double base, double power) {
-
-    // if (power == 1) return base;
 
     double output = base;
 
@@ -28,8 +30,6 @@ double pow(double base, double power) {
 
     return output;
 }
-
-
 
 
 double stringToDouble(std::string input) {
@@ -40,7 +40,7 @@ double stringToDouble(std::string input) {
     int decimalIndex = 0;
     for (char i : input) {
 
-        double num = map(i);
+        double num = mapping(i);
 
         std::cout << "char: " << i << std::endl;
 
